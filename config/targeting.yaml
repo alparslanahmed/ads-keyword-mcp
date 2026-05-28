@@ -1,0 +1,41 @@
+# Targeting configuration: maps human-readable country/language names to the
+# Google Ads constants required by the Keyword Planner services.
+#
+# Google Ads identifies locations with "geo target constants" and languages with
+# "language constants". The numeric IDs below are the standard Google Ads
+# criteria IDs. They are stable but should be verified against the current
+# Google Ads API reference before production use, and extended as new
+# countries/languages are supported.
+#
+# Geo target constants:   https://developers.google.com/google-ads/api/data/geotargets
+# Language constants:      https://developers.google.com/google-ads/api/data/codes-formats#languages
+
+countries:
+  Turkey:
+    geoTargetConstant: "geoTargetConstants/2792"
+  United States:
+    geoTargetConstant: "geoTargetConstants/2840"
+  United Kingdom:
+    geoTargetConstant: "geoTargetConstants/2826"
+  Germany:
+    geoTargetConstant: "geoTargetConstants/2276"
+  France:
+    geoTargetConstant: "geoTargetConstants/2250"
+  Netherlands:
+    geoTargetConstant: "geoTargetConstants/2528"
+  Canada:
+    geoTargetConstant: "geoTargetConstants/2124"
+  Australia:
+    geoTargetConstant: "geoTargetConstants/2036"
+
+languages:
+  Turkish:
+    languageConstant: "languageConstants/1037"
+  English:
+    languageConstant: "languageConstants/1000"
+  German:
+    languageConstant: "languageConstants/1001"
+  French:
+    languageConstant: "languageConstants/1002"
+  Dutch:
+    languageConstant: "languageConstants/1010"

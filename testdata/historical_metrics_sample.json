@@ -1,0 +1,52 @@
+{
+  "results": [
+    {
+      "text": "portable espresso maker",
+      "keywordMetrics": {
+        "competition": "MEDIUM",
+        "avgMonthlySearches": "8100",
+        "competitionIndex": "47",
+        "lowTopOfPageBidMicros": "230000",
+        "highTopOfPageBidMicros": "910000",
+        "monthlySearchVolumes": [
+          {"year": "2023", "month": "JULY", "monthlySearches": "5400"},
+          {"year": "2023", "month": "AUGUST", "monthlySearches": "5900"},
+          {"year": "2023", "month": "SEPTEMBER", "monthlySearches": "6200"},
+          {"year": "2023", "month": "OCTOBER", "monthlySearches": "6600"},
+          {"year": "2023", "month": "NOVEMBER", "monthlySearches": "7100"},
+          {"year": "2023", "month": "DECEMBER", "monthlySearches": "7800"},
+          {"year": "2024", "month": "JANUARY", "monthlySearches": "6600"},
+          {"year": "2024", "month": "FEBRUARY", "monthlySearches": "7200"},
+          {"year": "2024", "month": "MARCH", "monthlySearches": "8100"},
+          {"year": "2024", "month": "APRIL", "monthlySearches": "8800"},
+          {"year": "2024", "month": "MAY", "monthlySearches": "9300"},
+          {"year": "2024", "month": "JUNE", "monthlySearches": "9900"}
+        ]
+      }
+    },
+    {
+      "text": "camping coffee maker",
+      "keywordMetrics": {
+        "competition": "LOW",
+        "avgMonthlySearches": "2400",
+        "competitionIndex": "29",
+        "lowTopOfPageBidMicros": "150000",
+        "highTopOfPageBidMicros": "720000",
+        "monthlySearchVolumes": [
+          {"year": "2023", "month": "JULY", "monthlySearches": "1800"},
+          {"year": "2023", "month": "AUGUST", "monthlySearches": "1900"},
+          {"year": "2023", "month": "SEPTEMBER", "monthlySearches": "2000"},
+          {"year": "2023", "month": "OCTOBER", "monthlySearches": "2100"},
+          {"year": "2023", "month": "NOVEMBER", "monthlySearches": "2200"},
+          {"year": "2023", "month": "DECEMBER", "monthlySearches": "2300"},
+          {"year": "2024", "month": "JANUARY", "monthlySearches": "2200"},
+          {"year": "2024", "month": "FEBRUARY", "monthlySearches": "2300"},
+          {"year": "2024", "month": "MARCH", "monthlySearches": "2400"},
+          {"year": "2024", "month": "APRIL", "monthlySearches": "2600"},
+          {"year": "2024", "month": "MAY", "monthlySearches": "2800"},
+          {"year": "2024", "month": "JUNE", "monthlySearches": "3000"}
+        ]
+      }
+    }
+  ]
+}

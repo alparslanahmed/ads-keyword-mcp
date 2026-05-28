@@ -1,0 +1,15 @@
+# Secrets / local config
+.env
+
+# SQLite databases
+*.db
+*.db-shm
+*.db-wal
+
+# Build output (anchored to repo root so cmd/ source dirs are not ignored)
+/bin/
+/keyword-market-mcp
+/research
+
+# OS / editor
+.DS_Store
