@@ -1,0 +1,77 @@
+{
+  "results": [
+    {
+      "text": "portable espresso maker",
+      "keywordIdeaMetrics": {
+        "competition": "MEDIUM",
+        "avgMonthlySearches": "8100",
+        "competitionIndex": "47",
+        "lowTopOfPageBidMicros": "230000",
+        "highTopOfPageBidMicros": "910000",
+        "monthlySearchVolumes": [
+          {"year": "2024", "month": "JANUARY", "monthlySearches": "6600"},
+          {"year": "2024", "month": "FEBRUARY", "monthlySearches": "7200"},
+          {"year": "2024", "month": "MARCH", "monthlySearches": "8100"},
+          {"year": "2024", "month": "APRIL", "monthlySearches": "8800"},
+          {"year": "2024", "month": "MAY", "monthlySearches": "9300"},
+          {"year": "2024", "month": "JUNE", "monthlySearches": "9900"}
+        ]
+      }
+    },
+    {
+      "text": "camping espresso maker",
+      "keywordIdeaMetrics": {
+        "competition": "LOW",
+        "avgMonthlySearches": "1300",
+        "competitionIndex": "22",
+        "lowTopOfPageBidMicros": "180000",
+        "highTopOfPageBidMicros": "640000",
+        "monthlySearchVolumes": [
+          {"year": "2024", "month": "JANUARY", "monthlySearches": "880"},
+          {"year": "2024", "month": "FEBRUARY", "monthlySearches": "1000"},
+          {"year": "2024", "month": "MARCH", "monthlySearches": "1300"},
+          {"year": "2024", "month": "APRIL", "monthlySearches": "1600"},
+          {"year": "2024", "month": "MAY", "monthlySearches": "1900"},
+          {"year": "2024", "month": "JUNE", "monthlySearches": "2400"}
+        ]
+      }
+    },
+    {
+      "text": "best portable coffee maker for travel",
+      "keywordIdeaMetrics": {
+        "competition": "HIGH",
+        "avgMonthlySearches": "2900",
+        "competitionIndex": "78",
+        "lowTopOfPageBidMicros": "320000",
+        "highTopOfPageBidMicros": "1450000",
+        "monthlySearchVolumes": [
+          {"year": "2024", "month": "JANUARY", "monthlySearches": "2400"},
+          {"year": "2024", "month": "FEBRUARY", "monthlySearches": "2600"},
+          {"year": "2024", "month": "MARCH", "monthlySearches": "2900"},
+          {"year": "2024", "month": "APRIL", "monthlySearches": "3100"},
+          {"year": "2024", "month": "MAY", "monthlySearches": "3000"},
+          {"year": "2024", "month": "JUNE", "monthlySearches": "2900"}
+        ]
+      }
+    },
+    {
+      "text": "taşınabilir espresso makinesi",
+      "keywordIdeaMetrics": {
+        "competition": "LOW",
+        "avgMonthlySearches": "590",
+        "competitionIndex": "18",
+        "lowTopOfPageBidMicros": "90000",
+        "highTopOfPageBidMicros": "410000",
+        "monthlySearchVolumes": [
+          {"year": "2024", "month": "JANUARY", "monthlySearches": "390"},
+          {"year": "2024", "month": "FEBRUARY", "monthlySearches": "480"},
+          {"year": "2024", "month": "MARCH", "monthlySearches": "590"},
+          {"year": "2024", "month": "APRIL", "monthlySearches": "720"},
+          {"year": "2024", "month": "MAY", "monthlySearches": "880"},
+          {"year": "2024", "month": "JUNE", "monthlySearches": "1000"}
+        ]
+      }
+    }
+  ],
+  "nextPageToken": ""
+}
