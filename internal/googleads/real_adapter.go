@@ -3,6 +3,7 @@ package googleads
 import (
 	"context"
 	"encoding/json"
+	"log/slog"
 
 	"github.com/alparslanahmed/keyword-market-mcp/internal/utils"
 )
@@ -13,12 +14,14 @@ type RealGoogleAdsAdapter struct {
 	client *httpClient
 }
 
-// NewRealGoogleAdsAdapter validates credentials and builds the adapter.
-func NewRealGoogleAdsAdapter(creds Credentials) (*RealGoogleAdsAdapter, error) {
+// NewRealGoogleAdsAdapter validates credentials and builds the adapter. The
+// logger is used at debug level to record raw Google Ads error responses so
+// operators can read the underlying sub-code without it leaking into MCP output.
+func NewRealGoogleAdsAdapter(creds Credentials, logger *slog.Logger) (*RealGoogleAdsAdapter, error) {
 	if err := creds.validate(); err != nil {
 		return nil, err
 	}
-	return &RealGoogleAdsAdapter{client: newHTTPClient(creds)}, nil
+	return &RealGoogleAdsAdapter{client: newHTTPClient(creds, logger)}, nil
 }
 
 // GenerateKeywordIdeas calls KeywordPlanIdeaService.GenerateKeywordIdeas.
