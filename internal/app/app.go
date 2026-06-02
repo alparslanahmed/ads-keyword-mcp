@@ -65,7 +65,7 @@ func selectAdapter(cfg *Config, logger *slog.Logger) googleads.GoogleAdsAdapter 
 		logger.Info("using mock Google Ads adapter (no credentials required)")
 		return googleads.NewMockGoogleAdsAdapter()
 	}
-	real, err := googleads.NewRealGoogleAdsAdapter(cfg.GoogleAds)
+	real, err := googleads.NewRealGoogleAdsAdapter(cfg.GoogleAds, logger)
 	if err != nil {
 		logger.Warn("Google Ads credentials are incomplete; tool calls will return MISSING_CREDENTIALS until configured (or set GOOGLE_ADS_MOCK=true)")
 		return googleads.NewUnconfiguredAdapter()

@@ -5,6 +5,7 @@ import (
 	"context"
 	"encoding/json"
 	"io"
+	"log/slog"
 	"net/http"
 	"net/url"
 	"strings"
@@ -47,21 +48,30 @@ type httpClient struct {
 	creds      Credentials
 	apiVersion string
 	hc         *http.Client
+	logger     *slog.Logger
 
 	mu       sync.Mutex
 	token    string
 	tokenExp time.Time
 }
 
-func newHTTPClient(creds Credentials) *httpClient {
+// maxLoggedBodyBytes bounds how much of an error response body is written to the
+// debug log so a large payload cannot blow up logs.
+const maxLoggedBodyBytes = 4096
+
+func newHTTPClient(creds Credentials, logger *slog.Logger) *httpClient {
 	ver := creds.APIVersion
 	if ver == "" {
 		ver = defaultAPIVersion
+	}
+	if logger == nil {
+		logger = slog.New(slog.NewTextHandler(io.Discard, nil))
 	}
 	return &httpClient{
 		creds:      creds,
 		apiVersion: ver,
 		hc:         &http.Client{Timeout: 30 * time.Second},
+		logger:     logger,
 	}
 }
 
@@ -137,9 +147,25 @@ func (c *httpClient) post(ctx context.Context, method string, reqBody any) ([]by
 	defer resp.Body.Close()
 	body, _ := io.ReadAll(resp.Body)
 	if resp.StatusCode >= 300 {
+		// Log the raw error body at debug level so server operators can read the
+		// underlying Google sub-code (e.g. AUTHENTICATION_ERROR, UNSUPPORTED_VERSION)
+		// without it leaking into MCP responses. The body comes from Google and
+		// does not echo our credentials.
+		c.logger.Debug("google ads api error response",
+			"status", resp.StatusCode,
+			"endpoint", method,
+			"apiVersion", c.apiVersion,
+			"body", truncateForLog(body))
 		return nil, classifyAPIError(resp.StatusCode, body)
 	}
 	return body, nil
+}
+
+func truncateForLog(b []byte) string {
+	if len(b) <= maxLoggedBodyBytes {
+		return string(b)
+	}
+	return string(b[:maxLoggedBodyBytes]) + "...[truncated]"
 }
 
 func digitsOnly(s string) string {
