@@ -97,7 +97,7 @@ Copy `.env.example` to `.env` and fill in values:
 | `GOOGLE_ADS_LOGIN_CUSTOMER_ID` | — | Manager account ID (optional) |
 | `GOOGLE_ADS_CUSTOMER_ID` | — | Target customer ID |
 | `GOOGLE_ADS_MOCK` | `false` | `true` to use deterministic mock data |
-| `GOOGLE_ADS_API_VERSION` | `v18` | Google Ads REST API version |
+| `GOOGLE_ADS_API_VERSION` | `v24` | Google Ads REST API version |
 | `DATABASE_DSN` | `keyword_market.db` | SQLite path |
 | `LOG_LEVEL` | `info` | `debug`/`info`/`warn`/`error` |
 | `APP_ENV` | `development` | `development`/`test`/`production` |
@@ -177,6 +177,24 @@ curl -X POST localhost:8080/debug/validate-product-idea \
 Build the binary (`make build`) and point your MCP client at its absolute path
 with the `--stdio` argument. Provide credentials via the `env` block (or set
 `GOOGLE_ADS_MOCK` to `true`).
+
+### Windows: install for Codex and ChatGPT Desktop
+
+From PowerShell in the project directory:
+
+```powershell
+# Credential-free local demo (deterministic mock data):
+.\scripts\install-codex.ps1
+
+# After filling .env with Google Ads credentials, install in live mode:
+.\scripts\install-codex.ps1 -Live
+```
+
+Restart Codex or ChatGPT Desktop after installation. Both local clients share
+the Codex MCP configuration; use `/mcp` to confirm that `keyword-market` is
+connected. The installer pre-approves calls only for this local research server;
+it does not change approval settings for other MCP servers. ChatGPT on the web cannot start a local stdio process. Web use
+requires a streamable HTTP MCP endpoint reachable over HTTPS.
 
 ## 12. Example MCP client config
 

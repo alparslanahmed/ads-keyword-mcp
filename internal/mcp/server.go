@@ -14,6 +14,8 @@ import (
 
 const protocolVersion = "2024-11-05"
 
+const serverInstructions = "Use validate_product_idea for end-to-end idea research and compare_product_ideas when evaluating alternatives. Default to Turkey and Turkish unless the user specifies another supported market. Treat keyword volume as directional evidence, not proof of sales. Mock mode returns deterministic demo data; do not present it as live Google Ads data."
+
 // toolHandler runs a tool against decoded arguments and returns the data payload
 // (which the server wraps in the success envelope) or an error (wrapped in the
 // failure envelope).
@@ -154,6 +156,7 @@ func (s *Server) dispatch(ctx context.Context, req Request) (Response, bool) {
 func (s *Server) handleInitialize() map[string]any {
 	return map[string]any{
 		"protocolVersion": protocolVersion,
+		"instructions":    serverInstructions,
 		"capabilities": map[string]any{
 			"tools":     map[string]any{},
 			"resources": map[string]any{},

@@ -35,6 +35,11 @@ func newTestStack(t *testing.T) testStack {
 	if err != nil {
 		t.Fatalf("open db: %v", err)
 	}
+	t.Cleanup(func() {
+		if err := db.Close(gdb); err != nil {
+			t.Errorf("close db: %v", err)
+		}
+	})
 	store := db.NewStore(gdb)
 	registry, err := googleads.LoadTargetingRegistry()
 	if err != nil {

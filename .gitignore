@@ -1,5 +1,7 @@
 # Secrets / local config
 .env
+client_secret_*.apps.googleusercontent.com.json
+credentials.json
 
 # SQLite databases
 *.db
